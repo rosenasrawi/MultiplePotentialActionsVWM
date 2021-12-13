@@ -27,11 +27,6 @@ for this_subject = subjects
         load1v2v4_all.time = load1v2v4_all.time(time_index);
     end
     
-    % Baseline corrected loads
-    load1v2v4_all.blc_load1(s,:,:,:) = load1v2v4.blc_load1(:,:,time_index);
-	load1v2v4_all.blc_load2(s,:,:,:) = load1v2v4.blc_load2(:,:,time_index);
-    load1v2v4_all.blc_load4(s,:,:,:) = load1v2v4.blc_load4(:,:,time_index);
-    
     % Load comparisons
     load1v2v4_all.load1_load2(s,:,:,:) = load1v2v4.load1_load2(:,:,time_index);
     load1v2v4_all.load2_load4(s,:,:,:) = load1v2v4.load2_load4(:,:,time_index);
@@ -43,11 +38,6 @@ end
 
 mean_load1v2v4_all = load1v2v4_all;
 
-% Baseline corrected loads
-mean_load1v2v4_all.blc_load1 = squeeze(mean(load1v2v4_all.blc_load1));
-mean_load1v2v4_all.blc_load2 = squeeze(mean(load1v2v4_all.blc_load2));
-mean_load1v2v4_all.blc_load4 = squeeze(mean(load1v2v4_all.blc_load4));
-
 % Load comparisons
 mean_load1v2v4_all.load1_load2 = squeeze(mean(load1v2v4_all.load1_load2));
 mean_load1v2v4_all.load2_load4 = squeeze(mean(load1v2v4_all.load2_load4));
@@ -58,10 +48,6 @@ mean_load1v2v4_all.load1_load4 = squeeze(mean(load1v2v4_all.load1_load4));
 beta_index = load1v2v4_all.freq >= param.betaband(1) & load1v2v4_all.freq <= param.betaband(2);
 C3_index = ismember(load1v2v4_all.label, param.C3);
 
-load1v2v4_all.blc_load1_beta_C3 = squeeze(mean(load1v2v4_all.blc_load1(:,C3_index,beta_index,:), 3));
-load1v2v4_all.blc_load2_beta_C3 = squeeze(mean(load1v2v4_all.blc_load2(:,C3_index,beta_index,:), 3));
-load1v2v4_all.blc_load4_beta_C3 = squeeze(mean(load1v2v4_all.blc_load4(:,C3_index,beta_index,:), 3));
-
 load1v2v4_all.load1_load2_beta_C3 = squeeze(mean(load1v2v4_all.load1_load2(:,C3_index,beta_index,:), 3));
 load1v2v4_all.load2_load4_beta_C3 = squeeze(mean(load1v2v4_all.load2_load4(:,C3_index,beta_index,:), 3));
 load1v2v4_all.load1_load4_beta_C3 = squeeze(mean(load1v2v4_all.load1_load4(:,C3_index,beta_index,:), 3));
@@ -71,5 +57,3 @@ load1v2v4_all.load1_load4_beta_C3 = squeeze(mean(load1v2v4_all.load1_load4(:,C3_
 save ([param.path, '/tfr GA contrasts/' 'load1vs2vs4_all_encoding_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'load1v2v4_all');
 
 save ([param.path, '/tfr GA contrasts/' 'mean_load1vs2vs4_all_encoding_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'mean_load1v2v4_all');
-
-
