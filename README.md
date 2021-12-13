@@ -10,37 +10,37 @@ _rn2_open_behavior_data.R_ – **Make some changes to this csv file (cleaned, ex
 _rn2_combined_logfile.m_ – **Open this csv and export to a .mat file** <br/>
 
 ### after
-_rn2_epoch_conditions.R_ **Calculate all the necessary summaries for stats & plotting** <br/>
-_rn2_plot_behavior_data.R_ **Plot the main behaviour data** <br/>
-_rn2_behavior_stats.R_ **Statistics main effect load on RT & precision** <br/>
+_rn2_epoch_conditions.R_ – **Calculate all the necessary summaries for stats & plotting** <br/>
+_rn2_plot_behavior_data.R_ – **Plot the main behaviour data** <br/>
+_rn2_behavior_stats.R_ – **Statistics main effect load on RT & precision** <br/>
 
 ## EEG
 
-_rn2_gen_param.m_ **For all the general parameters** <br/>
+_rn2_gen_param.m_ – **For all the general parameters** <br/>
 
 ### _functions
-_rn2_errorbarplot.m_ **Function to add errorbars to time-course plots** <br/>
-_rn2_ftclusterstat1D.m_ **Function to run clusterstat on the 1D time-course data** <br/>
-_rn2_ftclusterstat2D.m_ **Function to run clusterstat on the 2D time-frequency data** <br/>
+_rn2_errorbarplot.m_ – **Function to add errorbars to time-course plots** <br/>
+_rn2_ftclusterstat1D.m_ – **Function to run clusterstat on the 1D time-course data** <br/>
+_rn2_ftclusterstat2D.m_ – **Function to run clusterstat on the 2D time-frequency data** <br/>
 
 ### pre-processing
-_rn2_encoding_ICA_components.m_	**Find eye-movement related ICA components** <br/>
-_rn2_get_usable_trials.m_ **Find bad trials** <br/>
+_rn2_encoding_ICA_components.m_ – **Find eye-movement related ICA components** <br/>
+_rn2_get_usable_trials.m_ – **Find bad trials** <br/>
 
 ### tfr load1v2v4
-_rn2_encoding_load1v2v4_get_time_frequency.m_ **Get and save pp TFR contrasts load1v2v4** <br/>
-_rn2_encoding_load1v2v4_GA_time_frequency.m_ **Grand average** <br/>
-_rn2_encoding_load1v2v4_stats_time_frequency.m_ **Get and save stats for these contrasts** <br/>
-_rn2_encoding_load1v2v4_plot_GA_time_frequency.m_ **Plot them** <br/>
+_rn2_encoding_load1v2v4_get_time_frequency.m_ – **Get and save pp TFR contrasts load1v2v4** <br/>
+_rn2_encoding_load1v2v4_GA_time_frequency.m_ – **Grand average** <br/>
+_rn2_encoding_load1v2v4_stats_time_frequency.m_ – **Get and save stats for these contrasts** <br/>
+_rn2_encoding_load1v2v4_plot_GA_time_frequency.m_ – **Plot them** <br/>
 
 ### tfr similarity
-_rn2_encoding_similarity_get_time_frequency.m_ **Get and save pp TFR contrasts similarity** <br/>
-_rn2_encoding_similarity_GA_time_frequency.m_ **Grand average** <br/>
-_rn2_encoding_similarity_stats_time_frequency.m_ **Get and save stats for these contrasts** <br/>
-_rn2_encoding_similarity_plot_GA_time_frequency.m_ **Plot them** <br/>
+_rn2_encoding_similarity_get_time_frequency.m_ – **Get and save pp TFR contrasts similarity** <br/>
+_rn2_encoding_similarity_GA_time_frequency.m_ – **Grand average** <br/>
+_rn2_encoding_similarity_stats_time_frequency.m_ – **Get and save stats for these contrasts** <br/>
+_rn2_encoding_similarity_plot_GA_time_frequency.m_ – **Plot them** <br/>
 
 ### tfr performance
-_rn2_encoding_performance_get_time_frequency.m_	**Get and save pp TFR contrasts performance** <br/>
-_rn2_encoding_performance_GA_time_frequency.m_ **Grand average** <br/>
-_rn2_encoding_performance_stats_time_frequency.m_ **Get and save stats for these contrasts** <br/>
-_rn2_encoding_performance_plot_GA_time_frequency.m_ **Plot them** <br/>
+_rn2_encoding_performance_get_time_frequency.m_ – **Get and save pp TFR contrasts performance** <br/>
+_rn2_encoding_performance_GA_time_frequency.m_ – **Grand average** <br/>
+_rn2_encoding_performance_stats_time_frequency.m_ – **Get and save stats for these contrasts** <br/>
+_rn2_encoding_performance_plot_GA_time_frequency.m_ – **Plot them** <br/>
