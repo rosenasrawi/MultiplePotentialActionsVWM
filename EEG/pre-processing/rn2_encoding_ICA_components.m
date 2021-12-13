@@ -62,6 +62,7 @@ for this_subject = subjects
 
     max_abs_cor = find(abs(correlations) == max(abs(correlations)));
     max_abs_cor % print which one it is
+    
     ica2rem = input('bad components are: ');
 
     %% Save
