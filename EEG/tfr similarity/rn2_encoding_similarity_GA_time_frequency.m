@@ -25,13 +25,7 @@ for this_subject = subjects
         time_index = itemsim_all.time >= param.T_window(1) & itemsim_all.time <= param.T_window(2);
         itemsim_all.time = itemsim_all.time(time_index);
     end
-    
-    % Baseline corrected loads
-    itemsim_all.blc_load1(s,:,:,:)      = itemsim.blc_load1(:,:,time_index);
-	itemsim_all.blc_load2_sim(s,:,:,:)  = itemsim.blc_load2_sim(:,:,time_index);
-	itemsim_all.blc_load2_dif(s,:,:,:)  = itemsim.blc_load2_dif(:,:,time_index);    
-    itemsim_all.blc_load4(s,:,:,:)      = itemsim.blc_load4(:,:,time_index);
-    
+
     % Load comparisons
     
     itemsim_all.load1_load4(s,:,:,:)         = itemsim.load1_load4(:,:,time_index);
@@ -47,12 +41,6 @@ end
 
 mean_itemsim_all = itemsim_all;
 
-% Baseline corrected loads
-mean_itemsim_all.blc_load1          = squeeze(mean(itemsim_all.blc_load1));
-mean_itemsim_all.blc_load2_sim      = squeeze(mean(itemsim_all.blc_load2_sim));
-mean_itemsim_all.blc_load2_dif      = squeeze(mean(itemsim_all.blc_load2_dif));
-mean_itemsim_all.blc_load4          = squeeze(mean(itemsim_all.blc_load4));
-
 % Load comparisons
 
 mean_itemsim_all.load1_load4        = squeeze(mean(itemsim_all.load1_load4));
@@ -66,11 +54,6 @@ mean_itemsim_all.load2dif_load4     = squeeze(mean(itemsim_all.load2dif_load4));
 
 beta_index = itemsim_all.freq >= param.betaband(1) & itemsim_all.freq <= param.betaband(2);
 C3_index = ismember(itemsim_all.label, param.C3);
-
-itemsim_all.blc_load1_beta_C3           = squeeze(mean(itemsim_all.blc_load1(:,C3_index,beta_index,:), 3));
-itemsim_all.blc_load2_sim_beta_C3       = squeeze(mean(itemsim_all.blc_load2_sim(:,C3_index,beta_index,:), 3));
-itemsim_all.blc_load2_dif_beta_C3       = squeeze(mean(itemsim_all.blc_load2_dif(:,C3_index,beta_index,:), 3));
-itemsim_all.blc_load4_beta_C3           = squeeze(mean(itemsim_all.blc_load4(:,C3_index,beta_index,:), 3));
 
 itemsim_all.load1_load4_beta_C3         = squeeze(mean(itemsim_all.load1_load4(:,C3_index,beta_index,:), 3));
 itemsim_all.load1_load2sim_beta_C3      = squeeze(mean(itemsim_all.load1_load2sim(:,C3_index,beta_index,:), 3));
