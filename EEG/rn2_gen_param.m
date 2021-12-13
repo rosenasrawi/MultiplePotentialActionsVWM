@@ -22,10 +22,7 @@ function [param, eegfiles, logfiles] = rn2_gen_param(this_subject)
     
     param.betaband      = [15 25];
     param.alphaband     = [8 12];
-    param.thetaband     = [4 7];
-    
-    %param.C3_area       = {'FC3', 'C5', 'C3', 'C1', 'CP3'};
-    
+        
     param.C3            = 'C3';
     param.AFz           = 'AFz';
     param.POz           = 'POz';
@@ -38,7 +35,4 @@ function [param, eegfiles, logfiles] = rn2_gen_param(this_subject)
     
     param.timeselect    = {[0.5 1], [1 1.5], [1.5 2]};
     
-
 end
-
-
