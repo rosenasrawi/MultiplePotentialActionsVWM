@@ -32,10 +32,6 @@ data_load1fast_load1slow_beta_C3    = performance_all.load1fast_load1slow_beta_C
 data_load2fast_load2slow_beta_C3    = performance_all.load2fast_load2slow_beta_C3;
 data_load4fast_load4slow_beta_C3    = performance_all.load4fast_load4slow_beta_C3;
 
-data_load1precise_load1unprecise_beta_C3    = performance_all.load1precise_load1unprecise_beta_C3;
-data_load2precise_load2unprecise_beta_C3    = performance_all.load2precise_load2unprecise_beta_C3;
-data_load4precise_load4unprecise_beta_C3    = performance_all.load4precise_load4unprecise_beta_C3;
-
 data_zero = zeros(size(data_load1fast_load1slow_beta_C3));
 
 %% Run stats (1D)
@@ -44,18 +40,11 @@ stat_load1fast_load1slow_beta_C3     = frevede_ftclusterstat1D(statcfg, data_loa
 stat_load2fast_load2slow_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load2fast_load2slow_beta_C3, data_zero);
 stat_load4fast_load4slow_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load4fast_load4slow_beta_C3, data_zero);
 
-stat_load1precise_load1unprecise_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load1precise_load1unprecise_beta_C3, data_zero);
-stat_load2precise_load2unprecise_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load2precise_load2unprecise_beta_C3, data_zero);
-stat_load4precise_load4unprecise_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load4precise_load4unprecise_beta_C3, data_zero);
-
 %% Save (1D)
 
 save ([param.path, '/tfr stats performance/' 'stat_load1fast_load1slow_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1fast_load1slow_beta_C3');
 save ([param.path, '/tfr stats performance/' 'stat_load2fast_load2slow_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2fast_load2slow_beta_C3');
 save ([param.path, '/tfr stats performance/' 'stat_load4fast_load4slow_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load4fast_load4slow_beta_C3');
-save ([param.path, '/tfr stats performance/' 'stat_load1precise_load1unprecise_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1precise_load1unprecise_beta_C3');
-save ([param.path, '/tfr stats performance/' 'stat_load2precise_load2unprecise_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2precise_load2unprecise_beta_C3');
-save ([param.path, '/tfr stats performance/' 'stat_load4precise_load4unprecise_beta_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load4precise_load4unprecise_beta_C3');
 
 %% Define structure for statistics (2D)
 
@@ -75,10 +64,6 @@ data_load1fast_load1slow_C3    = squeeze(performance_all.load1fast_load1slow(:,C
 data_load2fast_load2slow_C3    = squeeze(performance_all.load2fast_load2slow(:,C3_index,:,:));
 data_load4fast_load4slow_C3    = squeeze(performance_all.load4fast_load4slow(:,C3_index,:,:));
 
-data_load1precise_load1unprecise_C3    = squeeze(performance_all.load1precise_load1unprecise(:,C3_index,:,:));
-data_load2precise_load2unprecise_C3    = squeeze(performance_all.load2precise_load2unprecise(:,C3_index,:,:));
-data_load4precise_load4unprecise_C3    = squeeze(performance_all.load4precise_load4unprecise(:,C3_index,:,:));
-
 data_zero = zeros(size(data_load1fast_load1slow_C3));
 
 %% Run stats (2D)
@@ -87,16 +72,8 @@ stat_load1fast_load1slow_C3     = frevede_ftclusterstat2D(statcfg, data_load1fas
 stat_load2fast_load2slow_C3     = frevede_ftclusterstat2D(statcfg, data_load2fast_load2slow_C3, data_zero);
 stat_load4fast_load4slow_C3     = frevede_ftclusterstat2D(statcfg, data_load4fast_load4slow_C3, data_zero);
 
-stat_load1precise_load1unprecise_C3     = frevede_ftclusterstat2D(statcfg, data_load1precise_load1unprecise_C3, data_zero);
-stat_load2precise_load2unprecise_C3     = frevede_ftclusterstat2D(statcfg, data_load2precise_load2unprecise_C3, data_zero);
-stat_load4precise_load4unprecise_C3     = frevede_ftclusterstat2D(statcfg, data_load4precise_load4unprecise_C3, data_zero);
-
 %% Save stats (2D)
 
 save ([param.path, '/tfr stats performance/' 'stat_load1fast_load1slow_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1fast_load1slow_C3');
 save ([param.path, '/tfr stats performance/' 'stat_load2fast_load2slow_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2fast_load2slow_C3');
 save ([param.path, '/tfr stats performance/' 'stat_load4fast_load4slow_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load4fast_load4slow_C3');
-
-save ([param.path, '/tfr stats performance/' 'stat_load1precise_load1unprecise_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1precise_load1unprecise_C3');
-save ([param.path, '/tfr stats performance/' 'stat_load2precise_load2unprecise_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2precise_load2unprecise_C3');
-save ([param.path, '/tfr stats performance/' 'stat_load4precise_load4unprecise_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load4precise_load4unprecise_C3');
