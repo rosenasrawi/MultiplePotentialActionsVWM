@@ -24,7 +24,7 @@ beh_data_cleaning = "fast-and-slow"; %'slow' %'none'
 
 %% Start loop
 
-subjects = 25;
+subjects = 1:25;
 
 for this_subject = subjects
     
@@ -126,22 +126,7 @@ for this_subject = subjects
 
     tfr = ft_freqanalysis(cfg, data);
 
-    clear data;    
-    
-    %% Baseline correct data pre-encoding
-    
-    timesel_baseline = tfr.time >= -.5+(windowsize / 2) & tfr.time <= 0-(windowsize / 2);
-    data_baseline = squeeze(mean(mean(tfr.powspctrm(:,:,:,timesel_baseline),4))); % mean over time in baseline period & trials
-    
-    tfr.blcorrected = nan(size(tfr.powspctrm));
-    
-    for trial = 1:length(tfr.trialinfo(:,1))
-                
-        for time = 1:length(tfr.time)
-           tfr.blcorrected(trial,:,:,time) = ((squeeze(tfr.powspctrm(trial,:,:,time)) - data_baseline) ./ data_baseline) * 100;
-        end
-        
-    end    
+    clear data;     
     
     %% Separate trial types
 
@@ -191,16 +176,6 @@ for this_subject = subjects
 
     load2dif_load4 = squeeze(((a-b) ./ (a+b))) * 100;  
             
-    %% Loads versus baseline
-    
-    blc_load1 = squeeze(mean(tfr.blcorrected(trials_load1,:,:,:)));
-    
-    blc_load2_sim = squeeze(mean(tfr.blcorrected(trials_load2_sim,:,:,:)));
-    
-    blc_load2_dif = squeeze(mean(tfr.blcorrected(trials_load2_dif,:,:,:)));
-    
-    blc_load4 = squeeze(mean(tfr.blcorrected(trials_load4,:,:,:)));
-    
     %% Contrast parameters in structure
 
     itemsim = [];
@@ -209,13 +184,7 @@ for this_subject = subjects
     itemsim.time = tfr.time;
     itemsim.freq = tfr.freq;
     itemsim.dimord = 'chan_freq_time';
-    
-    % Loads baseline corrected
-    itemsim.blc_load1           = blc_load1;
-    itemsim.blc_load2_sim       = blc_load2_sim;
-    itemsim.blc_load2_dif       = blc_load2_dif;
-    itemsim.blc_load4           = blc_load4;
-    
+
     % Load comparisons
     itemsim.load1_load4         = load1_load4;
     itemsim.load1_load2sim      = load1_load2sim;
