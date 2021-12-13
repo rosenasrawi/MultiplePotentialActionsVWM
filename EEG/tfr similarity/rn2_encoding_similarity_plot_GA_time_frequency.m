@@ -36,25 +36,9 @@ load ([param.path, '/tfr stats similarity/' 'stat_sim_load2sim_load2dif_C3_lapl'
 load ([param.path, '/tfr stats similarity/' 'stat_sim_load2sim_load4_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2sim_load4_C3');
 load ([param.path, '/tfr stats similarity/' 'stat_sim_load2dif_load4_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2dif_load4_C3');
 
-%% Nice colors for plotting
-
-color_1 = [224,152,7] / 255;    % Orange
-color_2 = [153,72,224] / 255;   % Purple
-color_3 = [21,161,121] / 255;   % Green
-
-color_4 = [242,216,1] / 255;    % Yellow
-color_5 = [205,78,51] / 255;    % Red
-color_6 = [24,138,161] / 255;   % Blue
-
-
-color_7 = [179, 31, 44] / 255;      % Red       % 1
-color_8 = [23, 94, 162] / 255;      % Blue      % 2
-color_9 = [211, 189, 32] / 255;     % Yellow    % 4
+%% Color for time-course
 
 color_10 = [145, 145, 145] / 255;    % Grey
-
-color_11 = [29,119,204] / 255;   % Blue (light) 
-color_12 = [18,75,128] / 255;    % Blue (dark)
 
 %% LOAD COMPARISONS - variables
 
@@ -78,27 +62,11 @@ for channel = 1:length(mean_itemsim_all.label)
     mean_itemsim_all.mask_load2dif_load4_C3(channel,:,:)    = squeeze(stat_load2dif_load4_C3.mask);
 end
 
-%% Multiplot (RT)
 
-cfg = [];
-
-for contrast = 1:length(contrasts_loadcomp)
-    cfg.zlim            = 'maxabs';
-    cfg.parameter       = contrasts_loadcomp{contrast};
-    cfg.layout          = 'easycapM1.lay';
-
-    ft_multiplotTFR_2(cfg, mean_itemsim_all);
-    title(titles_loadcomp{contrast});
-    colormap(flipud(brewermap(100,'RdBu')));
-
-end
-
-%% Plot
-%select_channels = {'C3','POz','Fz'};
+%% Plot TFR C3
 select_channels = {'C3'}; 
 
 zlims = {[-12 12], [-12 12], [-12 12]};
-%zlims = {'maxabs'};
 
 for channel = 1:length(select_channels)
     
@@ -177,56 +145,6 @@ for contrast = 1:length(contrasts_loadcomp)
     
 end
 
-%% Plot comparisons next to one another
-
-% %% Plot timecourses loads betaband (side by side)
-% 
-% figure;
-% subplot(1,3,1);
-% 
-% [m_plot1] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load2_sim_beta_C3, color_11, 'se');
-% [m_plot3] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load2_dif_beta_C3, color_12, 'se');
-% 
-% axis([-.35 2.5 -50 30]);
-% plot([0,0], ylim, 'k'); 
-% plot([2,2], ylim, 'k');
-% 
-% legend([m_plot1, m_plot3], titles_blc_loads{[1 2]}, 'AutoUpdate', 'off', 'Location', 'northeast','FontSize', 12); 
-% xlabel('Time (s)','FontSize', 13);
-% ylabel('Betaband (15-30 Hz) power','FontSize', 13);
-% 
-% subplot(1,3,2);
-% 
-% [m_plot1] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load2_sim_beta_C3, color_11, 'se');
-% [m_plot2] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load4_beta_C3, color_9, 'se');
-% 
-% axis([-.35 2.5 -50 30]);
-% plot([0,0], ylim, 'k'); 
-% plot([2,2], ylim, 'k');
-% 
-% legend([m_plot1, m_plot2], titles_blc_loads{[1 3]}, 'AutoUpdate', 'off', 'Location', 'northeast','FontSize', 12);
-% xlabel('Time (s)','FontSize', 13);
-% 
-% subplot(1,3,3);
-% 
-% [m_plot2] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load2_dif_beta_C3, color_12, 'se');
-% [m_plot3] = frevede_errorbarplot(itemsim_all.time, itemsim_all.blc_load4_beta_C3, color_9, 'se');
-% 
-% axis([-.35 2.5 -50 30]);
-% plot([0,0], ylim, 'k'); 
-% plot([2,2], ylim, 'k');
-% 
-% legend([m_plot2, m_plot3], titles_blc_loads{[2 3]}, 'AutoUpdate', 'off', 'Location', 'northeast','FontSize', 12); 
-% xlabel('Time (s)','FontSize', 13);
-% 
-% 
-% sgtitle('Baseline corrected loads in C3','FontSize', 14);
-% 
-% 
-% 
-% %% Save
-% 
-% saveas(gcf, [param.figpath 'beta-C3-subplot-itemsim-baseline-corrected-' 'lapl-' laplacian_text '.png'])
 
 %% Plot timecourses load comparisons betaband (side by side)
 
@@ -244,6 +162,9 @@ mask_load2dif_load4_beta_C3(mask_load2dif_load4_beta_C3==0) = nan; % nan data th
 verticaloffset = -1;
 
 figure;
+
+%% Load 2-sim v four
+
 subplot(1,3,1);
 
 [m_plot1] = frevede_errorbarplot(itemsim_all.time, itemsim_all.load2sim_load2dif_beta_C3, color_10, 'se');
@@ -259,6 +180,8 @@ legend(m_plot1, titles_loadcomp{1}, 'AutoUpdate', 'off', 'Location', 'north','Fo
 xlabel('Time (s)','FontSize', 13);
 ylabel('Betaband suppression (15-25 Hz)','FontSize', 13);
 
+%% Load 2-dif v four
+
 subplot(1,3,2);
 
 [m_plot2] = frevede_errorbarplot(itemsim_all.time, itemsim_all.load2sim_load4_beta_C3, color_10, 'se');
@@ -271,6 +194,8 @@ plot(itemsim_all.time, mask_load2sim_load4_beta_C3*verticaloffset, 'k', 'LineWid
 
 legend(m_plot2, titles_loadcomp{2}, 'AutoUpdate', 'off', 'Location', 'north','FontSize', 12);
 xlabel('Time (s)','FontSize', 13);
+
+%% Load 2-sim v dif
 
 subplot(1,3,3);
 

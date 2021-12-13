@@ -10,7 +10,6 @@ beh_data_cleaning = "fast-and-slow"; %'slow' %'none'
 %% Load structures
 
 this_subject = 1; % just need the general info
-
 [param, ~, ~] = rn2_gen_param(this_subject); %just need param
 
 load ([param.path, '/tfr GA contrasts/' 'itemsim_all_encoding_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'itemsim_all');
