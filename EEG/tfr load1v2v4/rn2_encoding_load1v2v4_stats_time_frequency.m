@@ -77,8 +77,3 @@ stat_load2_load4_C3 = frevede_ftclusterstat2D(statcfg, data_load2_load4_C3, data
 save ([param.path, '/tfr stats/' 'stat_load1_load4_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1_load4_C3');
 save ([param.path, '/tfr stats/' 'stat_load1_load2_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load1_load2_C3');
 save ([param.path, '/tfr stats/' 'stat_load2_load4_C3_lapl' num2str(laplacian) '_removedRT_' convertStringsToChars(beh_data_cleaning)], 'stat_load2_load4_C3');
-
-
-
-
-
