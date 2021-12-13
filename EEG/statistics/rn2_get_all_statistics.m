@@ -6,7 +6,6 @@ clc; clear; close all
 
 laplacian = true; % laplacian = false;
 beh_data_cleaning = "fast-and-slow"; %'slow' %'none'
-
 laplacian_text = 'yes'; % laplacian_text = 'no';
 
 %% Open statistics structures
