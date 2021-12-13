@@ -60,19 +60,14 @@ for this_subject = subjects
     bar(1:c, abs(correlations),'r'); title('correlations with component timecourses');   
     xlabel('comp #');
 
-
     %% Find the max abs cor
 
     max_abs_cor = find(abs(correlations) == max(abs(correlations)));
+    max_abs_cor % print which one it is
+    ica2rem = input('bad components are: ');
 
-    %max_abs_cor % print which one it is
-
-    %% save
-    %ica2rem = input('bad components are: ');
-    
-    ica2rem = max_abs_cor;
-    
+    %% Save
+        
     save([param.path, '/ICA components/' 'ICA_encoding_components', '_' param.sID], 'ica2rem','ica');
     
-
 end
