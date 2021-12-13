@@ -1,8 +1,6 @@
-%% Clear workspace
+%% Clean workspace
 
-clear all
-close all
-clc
+clc; clear; close all
 
 %% Settings
 
@@ -34,7 +32,6 @@ for this_subject = subjects
     
 end
 
-
 %% Add one row for R
 
 row2add = zeros(1, size(logfiles_all,2));
@@ -46,4 +43,3 @@ logfiles_all = [row2add; logfiles_all];
 writematrix(logfiles_all, [param.path 'logfiles/logfiles_combined_rn2.csv'] )
 
 writecell(logfile_header, [param.path 'logfiles/logfile_header_rn2.csv'] )
-

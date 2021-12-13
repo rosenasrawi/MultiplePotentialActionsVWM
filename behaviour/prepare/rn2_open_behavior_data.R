@@ -133,32 +133,6 @@ for (sub in unique(data$SubjectID)){
   }
 }
 
-
-#equal = c()
-
-#for (sub in unique(data$SubjectID)){
-#  for (load in 1:length(unique(data$BlockType))){
-#    sub.med = med.RT1.subj[sub,load]
-#    equal = c(equal, sum(data$SubjectID == sub & data$RT1 == sub.med))
-#  }
-#}  
-
-#histogram(equal)
-
-#equal = c()
-
-#for (sub in unique(data$SubjectID)){
-#  for (load in 1:length(unique(data$BlockType))){
-#    sub.med = med.err.subj[sub,load]
-#    equal = c(equal, sum(data$SubjectID == sub & data$AbsReportVsTarget == sub.med))
-#  }
-#}  
-
-#histogram(equal)
-
 #### Save ####
 
 write.table(data, 'logfiles_combined_header_rn2.csv', sep = ",")
-
-
-
