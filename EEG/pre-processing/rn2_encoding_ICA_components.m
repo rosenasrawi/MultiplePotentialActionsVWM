@@ -46,8 +46,6 @@ for this_subject = subjects
     d_eog = ft_timelockanalysis(cfg, data);
 
     %% Plot (visual inspection of components)
-
-    x = [];
     y = [];
 
     x = d_eog.trial(:,1,:); % eog
