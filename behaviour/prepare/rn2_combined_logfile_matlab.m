@@ -1,15 +1,12 @@
-%% Clean up workspace
+%% Clean workspace
 
-clear all
-close all
-clc
+clc; clear; close all
 
 %% Get param
 
 this_subject = 1; % just need the general info
 
 [param, ~, ~] = rn2_gen_param(this_subject); %just need param
-
 
 %% Open and change header
 
