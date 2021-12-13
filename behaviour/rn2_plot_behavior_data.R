@@ -1,7 +1,6 @@
 #### Load packages from library ####
 
 library(ggplot2)
-library(wesanderson)
 library(gridExtra)
 
 #### Directory ####
@@ -38,28 +37,13 @@ legend.theme = theme(legend.position = "right",
 
 legend.none = theme(legend.position = "none")
 
-color_1 = wes_palette("Darjeeling1")[1] # Red
-color_2 = wes_palette("Darjeeling1")[2] # Blue 
-color_3 = wes_palette("Darjeeling1")[3] # Yellow
-
-color_1 = 'firebrick3'
-color_2 = 'darkslategray4'
-color_3 = 'goldenrod2'
-
-color_1 = "#8C45AC" # purple
-color_2 = "#50AC7B" # green
-color_3 = "#C98151" # orange
-
 color_1 = "#9BC3E0" # blue light
 color_2 = "#80A2BA" # blue medium
 color_3 = "#546B7A" # blue dark
 
-#color_1 = "#D0A1E6" # lilac 
-#color_2 = "#B1E6C9" # light green
-#color_3 = "#DBA884" # light orange
-
-color_4 = wes_palette("Moonrise3")[2] # Pink
-color_5 = wes_palette("Cavalcanti1")[4] # Blue-ish
+color_4 = "#D0A1E6" # lilac 
+color_5 = "#B1E6C9" # light green
+color_6 = "#DBA884" # light orange
 
 #### Load ####
 
@@ -118,7 +102,6 @@ ggplot(summary.err.load,
   legend.none
 
 ggsave("Loads_ERR.eps", path = SaveFigures, width=5, height=4)
-
 
 #### Precision general ####
 
@@ -185,9 +168,7 @@ ggplot(RT_distributions, aes(x=RT, col = BlockType, group = BlockType)) +
 
 ggsave("RT_Distributions.eps", path = SaveFigures, width=5, height=4)
 
-
-#### Item similarity ####
-
+#### Item similarity (extra, not in paper) ####
 
 #### RT ####
 
@@ -199,10 +180,10 @@ ggplot(summary.rt.itemsim,
                 position = position_dodge(0.9), size = 0.5, color = "black") +
   geom_line(data = summary.rt.subj.itemsim, aes(group = SubjectID), color= "grey", alpha = 0.5) +
   
-  scale_fill_manual(values = c(color_1,
-                               color_2,
-                               color_2,
-                               color_3),
+  scale_fill_manual(values = c(color_4,
+                               color_5,
+                               color_5,
+                               color_6),
                     name = "Memory load",
                     labels = c("Load 1", "Load 2 (sim)", "Load 2 (dif)", "Load 4")) +
   
@@ -226,10 +207,10 @@ ggplot(summary.err.itemsim,
                 position = position_dodge(0.9), size = 0.5, color = "black") +
   geom_line(data = summary.err.subj.itemsim, aes(group = SubjectID), color= "grey", alpha = 0.5) +
   
-  scale_fill_manual(values = c(color_1,
-                               color_2,
-                               color_2,
-                               color_3),
+  scale_fill_manual(values = c(color_4,
+                               color_5,
+                               color_5,
+                               color_6),
                     name = "Memory load",
                     labels = c("Load 1", "Load 2 (sim)", "Load 2 (dif)", "Load 4")) +
   
