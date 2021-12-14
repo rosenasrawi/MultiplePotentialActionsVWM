@@ -155,7 +155,7 @@ figure;
 
 subplot(1,3,1);
 
-[m_plot1] = frevede_errorbarplot(load1v2v4_all.time, load1v2v4_all.load1_load4_beta_C3, color_10, 'se');
+[m_plot1] = rn2_errorbarplot(load1v2v4_all.time, load1v2v4_all.load1_load4_beta_C3, color_10, 'se');
 
 axis([-.25 2.5 -20 10]);
 plot([0,0], ylim, 'k'); 
@@ -171,7 +171,7 @@ ylabel('Betaband suppression (15-25 Hz)','FontSize', 13);
 
 subplot(1,3,2);
 
-[m_plot2] = frevede_errorbarplot(load1v2v4_all.time, load1v2v4_all.load1_load2_beta_C3, color_10, 'se');
+[m_plot2] = rn2_errorbarplot(load1v2v4_all.time, load1v2v4_all.load1_load2_beta_C3, color_10, 'se');
 
 axis([-.25 2.5 -20 10]);
 plot([0,0], ylim, 'k'); 
@@ -186,7 +186,7 @@ xlabel('Time (s)','FontSize', 13);
 
 subplot(1,3,3);
 
-[m_plot3] = frevede_errorbarplot(load1v2v4_all.time, load1v2v4_all.load2_load4_beta_C3, color_10, 'se');
+[m_plot3] = rn2_errorbarplot(load1v2v4_all.time, load1v2v4_all.load2_load4_beta_C3, color_10, 'se');
 
 axis([-.25 2.5 -20 10]);
 plot([0,0], ylim, 'k'); 

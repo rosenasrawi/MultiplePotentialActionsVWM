@@ -38,12 +38,12 @@ data_zero = zeros(size(data_load1_load4_beta_C3));
 
 %% Run stats (1D)
 
-stat_load1_load4_beta_C3        = frevede_ftclusterstat1D(statcfg, data_load1_load4_beta_C3, data_zero);
-stat_load1_load2sim_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load1_load2sim_beta_C3, data_zero);
-stat_load1_load2dif_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load1_load2dif_beta_C3, data_zero);
-stat_load2sim_load2dif_beta_C3  = frevede_ftclusterstat1D(statcfg, data_load2sim_load2dif_beta_C3, data_zero);
-stat_load2sim_load4_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load2sim_load4_beta_C3, data_zero);
-stat_load2dif_load4_beta_C3     = frevede_ftclusterstat1D(statcfg, data_load2dif_load4_beta_C3, data_zero);
+stat_load1_load4_beta_C3        = rn2_ftclusterstat1D(statcfg, data_load1_load4_beta_C3, data_zero);
+stat_load1_load2sim_beta_C3     = rn2_ftclusterstat1D(statcfg, data_load1_load2sim_beta_C3, data_zero);
+stat_load1_load2dif_beta_C3     = rn2_ftclusterstat1D(statcfg, data_load1_load2dif_beta_C3, data_zero);
+stat_load2sim_load2dif_beta_C3  = rn2_ftclusterstat1D(statcfg, data_load2sim_load2dif_beta_C3, data_zero);
+stat_load2sim_load4_beta_C3     = rn2_ftclusterstat1D(statcfg, data_load2sim_load4_beta_C3, data_zero);
+stat_load2dif_load4_beta_C3     = rn2_ftclusterstat1D(statcfg, data_load2dif_load4_beta_C3, data_zero);
 
 %% Save (1D)
 
@@ -79,12 +79,12 @@ data_zero = zeros(size(data_load1_load4_C3));
 
 %% Run stats (2D)
 
-stat_load1_load4_C3 = frevede_ftclusterstat2D(statcfg, data_load1_load4_C3, data_zero);
-stat_load1_load2sim_C3 = frevede_ftclusterstat2D(statcfg, data_load1_load2sim_C3, data_zero);
-stat_load1_load2dif_C3 = frevede_ftclusterstat2D(statcfg, data_load1_load2dif_C3, data_zero);
-stat_load2sim_load2dif_C3 = frevede_ftclusterstat2D(statcfg, data_load2sim_load2dif_C3, data_zero);
-stat_load2sim_load4_C3 = frevede_ftclusterstat2D(statcfg, data_load2sim_load4_C3, data_zero);
-stat_load2dif_load4_C3 = frevede_ftclusterstat2D(statcfg, data_load2dif_load4_C3, data_zero);
+stat_load1_load4_C3 = rn2_ftclusterstat2D(statcfg, data_load1_load4_C3, data_zero);
+stat_load1_load2sim_C3 = rn2_ftclusterstat2D(statcfg, data_load1_load2sim_C3, data_zero);
+stat_load1_load2dif_C3 = rn2_ftclusterstat2D(statcfg, data_load1_load2dif_C3, data_zero);
+stat_load2sim_load2dif_C3 = rn2_ftclusterstat2D(statcfg, data_load2sim_load2dif_C3, data_zero);
+stat_load2sim_load4_C3 = rn2_ftclusterstat2D(statcfg, data_load2sim_load4_C3, data_zero);
+stat_load2dif_load4_C3 = rn2_ftclusterstat2D(statcfg, data_load2dif_load4_C3, data_zero);
 
 %% Save stats (2D)
 
