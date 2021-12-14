@@ -1,3 +1,9 @@
+%% Description %%
+
+% This scripts loads the previously combined .csv data and .csv header
+% It changes the name of the header (now including extra variables)
+% Saves this as a .mat for furhter EEG analyses
+
 %% Clean workspace
 
 clc; clear; close all

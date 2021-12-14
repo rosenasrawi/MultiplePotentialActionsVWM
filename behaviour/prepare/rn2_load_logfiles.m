@@ -1,3 +1,9 @@
+%% Description %%
+
+% This scripts loads the .mat logfiles for each individual subject
+% Then pastes these together (by row) to form one .csv file
+% Returns .csv for the data; and .csv for its header
+
 %% Clean workspace
 
 clc; clear; close all

@@ -1,3 +1,11 @@
+#### Description ####
+
+# This script loads the behavioral data .csv file
+# Calculates the aggregate (for each subject) and summary (across subjects)
+# For each dependent variable (RT, abs error) and condition (memory load, item similarity)
+
+#### Clean workspace ####
+
 rm(list=ls())
 
 #### Load packages from library ####

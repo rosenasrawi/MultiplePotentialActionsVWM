@@ -1,3 +1,11 @@
+#### Description ####
+
+# This script loads the combined .csv logfiles (containing data for every subject) and its header
+# It changes the names of the header, and adds variables "ItemSimilarity", "cleanRT1", and "FastVsSlow"
+# Saves this as .csv
+
+#### Clean workspace ####
+
 rm(list=ls())
 
 #### Load packages ####

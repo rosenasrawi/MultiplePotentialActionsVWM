@@ -1,3 +1,8 @@
+#### Description ####
+
+# NOTE: Make sure you have summary.rt.subj.load & [...]err.subj.load in your environment (obtained from running "rn2_summary_conditions.R")
+# This script produces the behavioral figures: memory load x RT, memory load x error, density plots for each, memory load x similarity
+
 #### Load packages from library ####
 
 library(ggplot2)
