@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to plot TFR, topographies and time-course for each similarity 
+% comparison and save the plots as .eps files
+
 %% Clean workspace
 
 clc; clear; close all

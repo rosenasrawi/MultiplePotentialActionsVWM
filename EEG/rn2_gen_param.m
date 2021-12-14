@@ -1,8 +1,10 @@
-%% Parameters
+%% Description 
 
-% Function to specify general parameters of study rn2 (1vs2vs4 EEG).
-% Input: subject ID as a number
-% Output: param and filenames for subjects
+% Function to specify general parameters needed in the analyses.
+% Input – subject ID as a number
+% Output – param and filenames for subjects
+
+%% Parameters
 
 function [param, eegfiles, logfiles] = rn2_gen_param(this_subject)
 
@@ -20,12 +22,8 @@ function [param, eegfiles, logfiles] = rn2_gen_param(this_subject)
     param.path_eegfile  = [param.path, 'epoched encoding/', param.eegfile]; % session 1
     param.path_logfile  = [param.path, 'logfiles/', param.logfile];
     
-    param.betaband      = [15 25];
-    param.alphaband     = [8 12];
-        
+    param.betaband      = [15 25]; 
     param.C3            = 'C3';
-    param.AFz           = 'AFz';
-    param.POz           = 'POz';
     
     param.T_window      = [-0.25 2.5];
     

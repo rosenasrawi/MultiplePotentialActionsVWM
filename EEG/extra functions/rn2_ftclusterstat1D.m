@@ -1,3 +1,11 @@
+%% Description 
+
+% Function to perform cluster-based permutation for the statistical evaluation of time-course EEG data (1D). 
+% Input – statcfg: configurations, data_cond1, data_cond2: data you wish to compare
+% Output – stat: significant negative and positive clusters
+
+%% Clusterstat 1D
+
 function stat = rn2_ftclusterstat1D(statcfg, data_cond1, data_cond2)
 
     % needs:
@@ -41,5 +49,3 @@ function stat = rn2_ftclusterstat1D(statcfg, data_cond1, data_cond2)
 % plot mask as horizontal line using e.g.
 % mask_xxx = double(stat.mask); mask_xxx(mask_xxx==0) = nan; % nan data that is not part of mark
 % plot(timevector, mask_xxx*verticaloffset, 'k', 'LineWidth', 2); % verticaloffset for positioning of the "significance line"
-
-

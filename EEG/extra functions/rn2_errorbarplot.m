@@ -1,3 +1,11 @@
+%% Description 
+
+% Function to plot error around EEG time-course
+% Input – xax: time axis, values: 2D data (subjects x time), rgb: color as RGB values, shading: for only se 'se', for only ci 'ci', for se & ci 'both'
+% Output – m_plot, add to existing figure to show error as shading around timecourse
+
+%% Errorbar plot
+
 function [m_plot] = rn2_errorbarplot(xax, values, rgb, shading) 
 
     % Input arguments 

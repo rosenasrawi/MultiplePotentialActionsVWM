@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to determine which trials to include for further analyses using ft_rejectvisual
+% Save list of trials to keep in further analysis
+
 %% Clean workspace
 
 clc; clear; close all

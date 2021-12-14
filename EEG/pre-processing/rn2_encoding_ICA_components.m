@@ -1,3 +1,9 @@
+%% Description 
+
+% Script to run independent component analysis (ICA) 
+% Correlate ICA components with eog time-courses (+topography check)
+% Save ICA components to remove in further analysis
+
 %% Clean workspace
 
 clc; clear; close all

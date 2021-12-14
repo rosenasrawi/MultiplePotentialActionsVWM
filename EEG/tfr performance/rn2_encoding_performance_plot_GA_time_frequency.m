@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to plot TFR, topographies and time-course for each performance 
+% comparison and memory load condition and save the plots as .eps files
+
 %% Clean workspace
 
 clc; clear; close all

@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to get time-frequency response, calculate contrasts for each similarity 
+% comparison, and save these contrasts as .mat files
+
 %% Clean workspace
 
 clc; clear; close all

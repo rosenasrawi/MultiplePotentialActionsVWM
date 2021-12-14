@@ -1,3 +1,11 @@
+%% Description 
+
+% Function to perform cluster-based permutation for the statistical evaluation of time-frequency EEG data (2D). 
+% Input – statcfg: configurations, data_cond1, data_cond2: data you wish to compare
+% Output – stat: significant negative and positive clusters
+
+%% Clusterstat 1D
+
 function stat = rn2_ftclusterstat2D(statcfg, data_cond1, data_cond2)
 
     % needs:

@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to run rn2_clusterstat1D and rn2_clusterstat2D for each similarity 
+% comparison and save the results as .mat files
+
 %% Clean workspace
 
 clc; clear; close all

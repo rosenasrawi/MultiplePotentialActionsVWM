@@ -1,3 +1,7 @@
+%% Description 
+
+% Script to extract p-values etc. from stat obtained with [...]_stat_time_frequency.m scripts 
+
 %% Clean workspace
 
 clc; clear; close all

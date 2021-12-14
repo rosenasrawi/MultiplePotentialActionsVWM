@@ -1,3 +1,8 @@
+%% Description 
+
+% Script to load time-frequency response for each subjects, combine these,
+% calculate the grand-average, and save both as .mat files
+
 %% Clean workspace
 
 clc; clear; close all
